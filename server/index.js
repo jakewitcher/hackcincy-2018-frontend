@@ -12,7 +12,7 @@ const ngrok =
     ? require('ngrok')
     : false;
 const { resolve } = require('path');
-const app = express();
+let app = express();
 
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
 // app.use('/api', myApi);
@@ -36,8 +36,10 @@ app.get('*.js', (req, res, next) => {
 });
 
 // Add grocery routes to the app
-let addGroceryRoutes = require('./routes/grocery.js');
+const addGroceryRoutes = require('./routes/grocery.js');
 app = addGroceryRoutes(app);
+const addPlacesRoutes = require('./routes/places.js');
+app = addPlacesRoutes(app);
 
 // Start your app.
 app.listen(port, host, async err => {
