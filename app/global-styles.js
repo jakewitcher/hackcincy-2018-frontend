@@ -5,10 +5,12 @@ const GlobalStyle = createGlobalStyle`
   body {
     height: 100%;
     width: 100%;
+
+    font-size: 62.5%;
   }
 
   body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'PT Sans', sans-serif;
   }
 
   body.fontLoaded {
@@ -23,8 +25,8 @@ const GlobalStyle = createGlobalStyle`
 
   p,
   label {
-    font-family: Georgia, Times, 'Times New Roman', serif;
-    line-height: 1.5em;
+    ${'' /* font-family: Georgia, Times, 'Times New Roman', serif; */}
+    ${'' /* line-height: 1.5em; */}
   }
 `;
 
