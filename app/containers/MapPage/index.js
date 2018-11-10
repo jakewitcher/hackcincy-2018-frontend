@@ -10,15 +10,48 @@
  */
 
 import React from 'react';
-import Maps from 'components/Map'
 
+import shelterLocations from 'assets/fixtures/shelter-locations';
+
+import Header from 'components/Header';
+import List from 'components/List';
+import Maps from 'components/Map';
+import ShelterListItem from 'components/ShelterListItem';
+
+import Control from './Control';
+import Panel from './Panel';
+import Toggle from './Toggle';
+import Wrapper from './Wrapper';
 
 export default class MapPage extends React.PureComponent {
+  state = {
+    panelActive: true,
+  };
+
+  togglePanel = () => {
+    this.setState8({ panelActive: !this.state.panelActive });
+  };
+
   render() {
     return (
-      <div>
+      <Wrapper>
+        {!this.state.panelActive && (
+          <Toggle className="left" onClick={this.togglePanel}>
+            <i className="fal fa-chevron-right" />
+          </Toggle>
+        )}
+        <Panel className={this.state.panelActive ? 'active' : ''}>
+          <Control>
+            <Header>Pantry Locations</Header>
+            <Toggle className="right" onClick={this.togglePanel}>
+              <i className="fal fa-chevron-left" />
+            </Toggle>
+          </Control>
+
+          <List data={shelterLocations} Component={ShelterListItem} />
+        </Panel>
         <Maps />
-      </div>
+      </Wrapper>
     );
   }
 }
