@@ -35,6 +35,10 @@ app.get('*.js', (req, res, next) => {
   next();
 });
 
+// Add grocery routes to the app
+let addGroceryRoutes = require('./routes/grocery.js');
+app = addGroceryRoutes(app);
+
 // Start your app.
 app.listen(port, host, async err => {
   if (err) {
