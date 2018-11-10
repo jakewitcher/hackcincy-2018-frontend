@@ -22,6 +22,7 @@ export default class MapPage extends React.PureComponent {
     },
     zoom: 14,
   };
+
   render() {
     return (
       <div style={{ height: '100vh', width: '100%' }}>
@@ -33,7 +34,7 @@ export default class MapPage extends React.PureComponent {
           <AnyReactComponent
             lat={39.103119}
             lng={-84.512016}
-            text={'Cincinnati'}
+            text="Cincinnati"
           />
         </GoogleMapReact>
       </div>
