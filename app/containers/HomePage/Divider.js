@@ -5,7 +5,7 @@ import css from 'cssVariables';
 export const Divider = styled.div`
   height: 1px;
   width: 24rem;
-  margin: 6rem 0;
+  margin: 6rem 0 10rem;
 
   background-color: #000;
 `;
