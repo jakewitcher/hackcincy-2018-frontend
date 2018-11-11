@@ -46,7 +46,7 @@ export function App() {
     <AppWrapper>
       <HeaderWrapper>
         <HeaderIcon>
-          <MenuLink to="/">Pantry</MenuLink>
+          <MenuLink to="/">The Pantry</MenuLink>
         </HeaderIcon>
         <HeaderMenu>
           <MenuLink to="/">Home</MenuLink>

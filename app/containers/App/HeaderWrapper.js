@@ -5,7 +5,7 @@ const HeaderWrapper = styled.aside`
 
   display: grid;
   grid-template-areas: 'header-icon header-menu';
-  grid-template-columns: 100px 1fr;
+  grid-template-columns: 20rem 1fr;
   grid-template-rows: 100px;
 
   background-color: white;
