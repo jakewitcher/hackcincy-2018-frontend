@@ -8,4 +8,11 @@ const makeSelectPlaces = () =>
     placesState => (placesState ? placesState.get('places') : false),
   );
 
-export { makeSelectPlaces };
+const makeSelectGroceries = () =>
+  createSelector(
+    selectMapPage,
+    placesState =>
+      placesState ? placesState.get('groceries').toJS().grocery : false,
+  );
+
+export { makeSelectPlaces, makeSelectGroceries };

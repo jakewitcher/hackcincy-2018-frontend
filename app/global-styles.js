@@ -23,10 +23,13 @@ const GlobalStyle = createGlobalStyle`
     min-width: 100%;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
   p,
   label {
-    ${'' /* font-family: Georgia, Times, 'Times New Roman', serif; */}
-    ${'' /* line-height: 1.5em; */}
+    margin: 0;
   }
 `;
 

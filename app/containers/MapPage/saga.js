@@ -38,7 +38,6 @@ export function* fetchPlaces(action) {
     console.log('fetchCampaigns:response ', response); //  eslint-disable-line no-console
 
     if (response.success) {
-      console.log("response.payload: ", response.payload); //  eslint-disable-line no-console
       yield put(getPlacesSuccess(response.payload));
     } else {
       yield put(

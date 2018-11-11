@@ -32,7 +32,7 @@ import Toggle from './Toggle';
 import Wrapper from './Wrapper';
 
 //  side effects
-import { makeSelectPlaces } from './selectors';
+import { makeSelectPlaces, makeSelectGroceries } from './selectors';
 import { getPlaces } from './actions';
 import reducer from './reducer';
 import saga from './saga';
@@ -43,6 +43,12 @@ export class MapPage extends React.PureComponent {
     markers: [],
   };
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.places) {
+      this.setState({ markers: nextProps.places });
+    }
+  }
+
   componentDidMount() {
     this.props.getPlaces();
   }
@@ -52,11 +58,12 @@ export class MapPage extends React.PureComponent {
   }
 
   togglePanel = () => {
-    this.setState8({ panelActive: !this.state.panelActive });
+    this.setState({ panelActive: !this.state.panelActive });
   };
 
   render() {
-    console.log("this.props.places: ", this.props.places); //  eslint-disable-line no-console
+    console.log('this.props.places: ', this.props.places); //  eslint-disable-line no-console
+    console.log('this.props.groceries: ', this.props.groceries); //  eslint-disable-line no-console
     return (
       <Wrapper>
         {!this.state.panelActive && (
@@ -72,7 +79,7 @@ export class MapPage extends React.PureComponent {
             </Toggle>
           </Control>
 
-          <List data={shelterLocations} Component={ShelterListItem} />
+          <List data={this.props.places} Component={ShelterListItem} />
         </Panel>
         <Maps markers={this.state.markers} />
       </Wrapper>
@@ -82,6 +89,7 @@ export class MapPage extends React.PureComponent {
 
 const mapStateToProps = createStructuredSelector({
   places: makeSelectPlaces(),
+  groceries: makeSelectGroceries(),
 });
 
 function mapDispatchToProps(dispatch) {
@@ -100,8 +108,7 @@ const withConnect = connect(
 const withReducer = injectReducer({ key: 'mapPage', reducer });
 const withSaga = injectSaga({ key: 'mapPage', saga });
 
-MapPage.propTypes = {
-};
+MapPage.propTypes = {};
 
 export default compose(
   withReducer,

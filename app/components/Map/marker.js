@@ -19,6 +19,7 @@ export function Marker(props) {
     left: 50%;
     top: 50%;
     margin: -20px 0 0 -20px;
+    opacity: 0.7;
   `;
   return <Container />;
 }
