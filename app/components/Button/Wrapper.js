@@ -4,10 +4,6 @@ import css from 'cssVariables';
 
 export const Wrapper = styled.button`
   font-size: 2.4rem;
-  ${'' /* text-transform: uppercase; */}
-
-  ${'' /* color: ${css.CLR_PIZAZZ};
-  border: 2px solid ${css.CLR_PIZAZZ}; */}
 
   padding: 1.6rem 4rem;
   border-radius: 5rem;
