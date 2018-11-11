@@ -49,12 +49,6 @@ export function App() {
         <HeaderIcon>
           <MenuLink to="/">The Pantry</MenuLink>
         </HeaderIcon>
-        <HeaderMenu>
-          <MenuLink to="/">Home</MenuLink>
-          <MenuLink to="/map">Map</MenuLink>
-          <MenuLink to="/confirmation">Confirmation</MenuLink>
-          <MenuLink to="/grocery">Grocery</MenuLink>
-        </HeaderMenu>
       </HeaderWrapper>
       <Content>
         <Switch>
