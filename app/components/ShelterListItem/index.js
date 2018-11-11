@@ -7,7 +7,7 @@ import Wrapper from './Wrapper';
 
 export class ShelterListItem extends React.PureComponent {
   render() {
-    console.log("this.props.data: ", this.props.data); //  eslint-disable-line no-console
+    // console.log("this.props.data: ", this.props.data); //  eslint-disable-line no-console
     return (
       <Wrapper key={this.props.data.id}>
         <ListItemInfo>

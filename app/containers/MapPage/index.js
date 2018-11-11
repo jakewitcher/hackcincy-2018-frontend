@@ -80,7 +80,6 @@ const mapStateToProps = createStructuredSelector({
 function mapDispatchToProps(dispatch) {
   return {
     getPlaces: () => {
-      console.log('Sanity:00'); //  eslint-disable-line no-console
       dispatch(getPlaces());
     },
   };
