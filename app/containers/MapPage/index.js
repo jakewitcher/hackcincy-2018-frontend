@@ -12,12 +12,14 @@
 import React from 'react';
 import Maps from 'components/Map'
 
-
 export default class MapPage extends React.PureComponent {
+  state = {
+    markers: [{ lat: 39.109852, lng: -84.515457, text: 'a' }, { lat: 39.299310, lng: -84.452310, text: 'b' }, { lat: 39.204370, lng: -84.377990, text: 'c' }]
+  }
   render() {
     return (
       <div>
-        <Maps />
+        <Maps markers={this.state.markers} />
       </div>
     );
   }
