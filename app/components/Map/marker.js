@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import css from 'cssVariables';
 const baseColor = '#ff8800;';
@@ -54,10 +55,12 @@ export function Marker(props) {
 
   return (
     <div>
-      <Container
-        onMouseEnter={() => props.focusMarker(props.lat)}
-        onMouseLeave={() => props.resetMarker(props.lat)}
-      />
+      <Link to="/grocery">
+        <Container
+          onMouseEnter={() => props.focusMarker(props.lat)}
+          onMouseLeave={() => props.resetMarker(props.lat)}
+        />
+      </Link>
       <ShelterName>
         <p>{props.text}</p>
       </ShelterName>
