@@ -10,6 +10,13 @@
  */
 
 import React from 'react';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { createStructuredSelector } from 'reselect';
+
+//  utils
+import injectReducer from 'utils/injectReducer';
+import injectSaga from 'utils/injectSaga';
 
 import shelterLocations from 'assets/fixtures/shelter-locations';
 
@@ -23,10 +30,20 @@ import Panel from './Panel';
 import Toggle from './Toggle';
 import Wrapper from './Wrapper';
 
-export default class MapPage extends React.PureComponent {
+//  side effects
+import { makeSelectPlaces } from './selectors';
+import { getPlaces } from './actions';
+import reducer from './reducer';
+import saga from './saga';
+
+export class MapPage extends React.PureComponent {
   state = {
     panelActive: true,
   };
+
+  componentDidMount() {
+    this.props.getPlaces();
+  }
 
   togglePanel = () => {
     this.setState8({ panelActive: !this.state.panelActive });
@@ -55,3 +72,32 @@ export default class MapPage extends React.PureComponent {
     );
   }
 }
+
+const mapStateToProps = createStructuredSelector({
+  places: makeSelectPlaces(),
+});
+
+function mapDispatchToProps(dispatch) {
+  return {
+    getPlaces: () => {
+      dispatch(getPlaces());
+    },
+  };
+}
+
+const withConnect = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+);
+
+const withReducer = injectReducer({ key: 'map', reducer });
+const withSaga = injectSaga({ key: 'map', saga });
+
+MapPage.propTypes = {
+};
+
+export default compose(
+  withReducer,
+  withSaga,
+  withConnect,
+)(MapPage);
