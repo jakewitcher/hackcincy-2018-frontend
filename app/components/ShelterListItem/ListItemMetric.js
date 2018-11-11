@@ -7,7 +7,7 @@ export const ListItemMetric = styled.p.attrs({
 })`
   font-size: 3.4rem;
 
-  color: #FF8800;
+  color: #ff8800;
 
   margin-top: 1rem;
 `;

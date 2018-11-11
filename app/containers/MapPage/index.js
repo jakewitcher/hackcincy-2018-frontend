@@ -62,7 +62,7 @@ export class MapPage extends React.PureComponent {
   };
 
   render() {
-    console.log("this.props.places: ", this.props.places); //  eslint-disable-line no-console
+    console.log('this.props.places: ', this.props.places); //  eslint-disable-line no-console
     return (
       <Wrapper>
         {!this.state.panelActive && (
@@ -106,8 +106,7 @@ const withConnect = connect(
 const withReducer = injectReducer({ key: 'mapPage', reducer });
 const withSaga = injectSaga({ key: 'mapPage', saga });
 
-MapPage.propTypes = {
-};
+MapPage.propTypes = {};
 
 export default compose(
   withReducer,

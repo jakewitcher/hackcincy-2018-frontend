@@ -1,0 +1,64 @@
+{
+  "grocery": [
+    {
+      "name": "Kroger Home Sense Soft & Strong Bath Tissue",
+      "price": "$5.99 each",
+      "quantity": "12",
+      "image": "https://www.kroger.com/product/images/medium/front/0001111080049"
+    },
+    {
+      "name": "Colgate Cavity Protection Toothpaste",
+      "price": "$2.99 each",
+      "quantity": "5",
+      "image": "https://www.kroger.com/product/images/medium/front/0003500051406"
+    },
+    {
+      "name": "Colgate Plus Full Head Meduim Toothbrush",
+      "price": "$0.99 each",
+      "quantity": "10",
+      "image": "https://www.kroger.com/product/images/medium/front/0004126035396"
+    },
+    {
+      "name": "Arm & Hammer UltraMax Fresh Antiperspirant and Deodorant",
+      "price": "$1.99 each",
+      "quantity": "6",
+      "image": "https://www.kroger.com/product/images/medium/front/0002220000492"
+    },
+    {
+      "name": "Kroger® 2% Reduced Fat Milk",
+      "price": "$2.10 each",
+      "quantity": "2",
+      "image": "https://www.kroger.com/product/images/medium/front/0001111041700"
+    },
+    {
+      "name": "Kroger® Round Top White Bread",
+      "price": "$1.49 each",
+      "quantity": "8",
+      "image": "https://www.kroger.com/product/images/medium/front/0001111000560"
+    },
+    {
+      "name": "Kroger® Creamy Peanut Butter",
+      "price": "$1.99 each",
+      "quantity": "3",
+      "image": "https://www.kroger.com/product/images/medium/front/0001111067269"
+    },
+    {
+      "name": "Apples - Gala",
+      "price": "$0.49/lb",
+      "quantity": "20",
+      "image": "https://www.kroger.com/product/images/medium/front/0000000004015"
+    },
+    {
+      "name": "Barilla Pasta Spaghetti",
+      "price": "$1.99 each",
+      "quantity": "4",
+      "image": "https://www.kroger.com/product/images/medium/front/0001111085004"
+    },
+    {
+      "name": "Kroger® Home Sense® Regular Paper Towel Roll",
+      "price": "$1.00 each",
+      "quantity": "11",
+      "image": "https://www.kroger.com/product/images/medium/front/0001111081045"
+    }
+  ]
+}
