@@ -2,6 +2,10 @@ import styled from 'styled-components';
 import cssVariables from 'cssVariables';
 
 const Panel = styled.aside.attrs({ className: 'map-page__panel' })`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
   position: fixed;
   z-index: 2;
   bottom: 0;

@@ -1,12 +1,6 @@
 {
   "grocery": [
     {
-      "name": "Kroger Home Sense Soft & Strong Bath Tissue",
-      "price": "5.99",
-      "quantity": "12",
-      "image": "https://www.kroger.com/product/images/medium/front/0001111080049"
-    },
-    {
       "name": "Colgate Plus Full Head Meduim Toothbrush",
       "price": "0.99",
       "quantity": "10",
@@ -17,6 +11,12 @@
       "price": "1.99",
       "quantity": "6",
       "image": "https://www.kroger.com/product/images/medium/front/0002220000492"
+    },
+    {
+      "name": "Kroger Home Sense Soft & Strong Bath Tissue",
+      "price": "5.99",
+      "quantity": "12",
+      "image": "https://www.kroger.com/product/images/medium/front/0001111080049"
     },
     {
       "name": "Kroger® 2% Reduced Fat Milk",

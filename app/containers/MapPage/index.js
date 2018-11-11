@@ -22,7 +22,10 @@ import { createStructuredSelector } from 'reselect';
 import shelterLocations from 'assets/fixtures/shelter-locations';
 
 //  side effects
-import { makeSelectPlaces, makeSelectGroceries } from 'containers/App/selectors';
+import {
+  makeSelectPlaces,
+  makeSelectGroceries,
+} from 'containers/App/selectors';
 import { getPlaces } from 'containers/App/actions';
 // import reducer from './reducer';
 // import saga from './saga';
@@ -43,16 +46,28 @@ export class MapPage extends React.PureComponent {
     markers: [],
   };
 
-  addFocus(places) {
+  addProps(places, groceries) {
     return places.map(place => {
+      const listSize = Math.floor(Math.random() * 7 + 3);
+      const newList = groceries.slice(0, listSize);
       place.focus = false;
+      place.groceries = newList.map(item => {
+        item.quantity = Math.floor(Math.random() * 18 + 2);
+        return item;
+      });
+      place.demand = place.groceries.reduce(
+        (sum, item) => sum + item.quantity,
+        0,
+      );
       return place;
     });
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.places) {
-      this.setState({ markers: this.addFocus(nextProps.places) });
+      this.setState({
+        markers: this.addProps(nextProps.places, this.props.groceries),
+      });
     }
   }
 
@@ -61,7 +76,7 @@ export class MapPage extends React.PureComponent {
   }
 
   togglePanel = () => {
-    this.setState({ panelActive: !this.state.panelActive })
+    this.setState({ panelActive: !this.state.panelActive });
   };
 
   focusMarker = place => {
@@ -122,9 +137,7 @@ export class MapPage extends React.PureComponent {
     );
   }
 
-  renderPanel = () => {
-
-  }
+  renderPanel = () => { };
 }
 
 const mapStateToProps = createStructuredSelector({

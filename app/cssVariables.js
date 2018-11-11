@@ -27,5 +27,6 @@ export default Object.assign({}, colors, {
   BORDER_RADIUS_SM: '0.4rem',
   BOX_SHADOW: '0 18px 35px rgba(50,50,93,.1), 0 8px 15px rgba(0,0,0,.07)',
   BOX_SHADOW_SM: '0 6px 20px rgba(50,50,93,.1), 0 4px 15px rgba(0,0,0,.07)',
+  BOX_SHADOW_XS: '0 3px 10px rgba(50,50,93,.1), 0 2px 8px rgba(0,0,0,.04)',
   // BOX_SHADOW: `0 0 27px 4px ${colors.MOON_RAKER}`,
 });

@@ -8,7 +8,7 @@ function scaleMarker(demand) {
   if (demand >= 15) {
     return 30;
   }
-  return demand * 2.5;
+  return demand * 0.5;
 }
 
 function colorChange(focus) {
