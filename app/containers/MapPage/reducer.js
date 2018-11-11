@@ -4,7 +4,7 @@ import { GET_PLACES_SUCCESS, GET_PLACES_FAILURE } from './constants';
 
 //  NOTE: App intial state
 export const initialState = fromJS({
-  places: [],
+  places: false,
   success: false,
   error: false,
 });

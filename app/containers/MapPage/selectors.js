@@ -1,10 +1,10 @@
 import { createSelector } from 'reselect';
 
-const selectPlaces = state => state.get('places');
+const selectMapPage = state => state.get('mapPage');
 
 const makeSelectPlaces = () =>
   createSelector(
-    selectPlaces,
+    selectMapPage,
     placesState => (placesState ? placesState.get('places') : false),
   );
 
