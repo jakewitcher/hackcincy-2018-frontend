@@ -59,7 +59,7 @@ export class MapPage extends React.PureComponent {
   }
 
   togglePanel = () => {
-    this.setState({ panelActive: !this.state.panelActive });
+    this.setState({ panelActive: !this.state.panelActive })
   };
 
   render() {

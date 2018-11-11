@@ -17,15 +17,20 @@ import { createStructuredSelector } from 'reselect';
 import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
 
-
+import ConfirmationPage from 'containers/ConfirmationPage/Loadable';
 import HomePage from 'containers/HomePage/Loadable';
 import MapPage from 'containers/MapPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 import MenuLink from 'components/MenuLink';
 
-import { makeSelectPlaces, makeSelectGroceries, makeSelectLocation } from './selectors';
+import {
+  // makeSelectPlaces,
+  // makeSelectGroceries,
+  makeSelectLocation,
+} from './selectors';
 
+import AppWrapper from './AppWrapper';
 import Content from './Content';
 import HeaderIcon from './HeaderIcon';
 import HeaderMenu from './HeaderMenu';
@@ -38,25 +43,27 @@ import GlobalStyle from '../../global-styles';
 
 export function App() {
   return (
-    <div>
+    <AppWrapper>
       <HeaderWrapper>
         <HeaderIcon>
-          <MenuLink to="/">Logo</MenuLink>
+          <MenuLink to="/">Pantry</MenuLink>
         </HeaderIcon>
         <HeaderMenu>
           <MenuLink to="/">Home</MenuLink>
           <MenuLink to="/map">Map</MenuLink>
+          <MenuLink to="/confirmation">Confirmation</MenuLink>
         </HeaderMenu>
       </HeaderWrapper>
       <Content>
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/map" component={MapPage} />
+          <Route exact path="/confirmation" component={ConfirmationPage} />
           <Route component={NotFoundPage} />
         </Switch>
       </Content>
       <GlobalStyle />
-    </div>
+    </AppWrapper>
   );
 }
 
