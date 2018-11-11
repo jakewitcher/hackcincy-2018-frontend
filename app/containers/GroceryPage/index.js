@@ -10,20 +10,14 @@ import GroceryListItem from 'components/GroceryListItem';
 export class GroceryPage extends React.PureComponent {
   render() {
     console.log(this.props.groceries);
-    return (
-      <GroceryListItem />
-    );
+    return <GroceryListItem />;
   }
 }
 
 const mapStateToProps = createStructuredSelector({
-  groceries: makeSelectGroceries()
+  groceries: makeSelectGroceries(),
 });
 
-const withConnect = connect(
-  mapStateToProps
-);
+const withConnect = connect(mapStateToProps);
 
-export default compose(
-  withConnect,
-)(GroceryPage);
+export default compose(withConnect)(GroceryPage);
