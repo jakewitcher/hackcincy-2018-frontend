@@ -4,13 +4,18 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 
-import { makeSelectGroceries } from 'containers/MapPage/selectors';
+import { makeSelectGroceries } from 'containers/App/selectors';
 import GroceryListItem from 'components/GroceryListItem';
 
 export class GroceryPage extends React.PureComponent {
   render() {
-    console.log(this.props.groceries);
-    return <GroceryListItem />;
+    return this.props.groceries.map(el => {
+      // name: el.name,
+      // price: el.price,
+      // qty: el.quantity,
+      // img: el.image
+      return <GroceryListItem name={el.name} price={el.price} img={el.image} qty={el.quantity}/>;
+    });
   }
 }
 

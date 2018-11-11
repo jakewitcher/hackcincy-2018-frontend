@@ -7,6 +7,7 @@ export const colors = {
   ALTO: '#D9D9D9',
   MOON_RAKER: '#DAE0F9',
   PIZAZZ: '#ff8800',
+  ORANGE: '#FF8800',
 };
 
 export default Object.assign({}, colors, {
@@ -17,8 +18,6 @@ export default Object.assign({}, colors, {
   CLR_MOON_RAKER: colors.MOON_RAKER,
   CLR_PIZAZZ: colors.PIZAZZ,
   CLR_INFO: colors.FIORD,
-  // CLR_PRIMARY_BG: colors.TITAN_BLUE,
-  // CLR_SECONDARY_BG: colors.FIORD,
   CLR_PRIMARY_BG: colors.FIORD,
   CLR_SECONDARY_BG: colors.TITAN_BLUE,
   CLR_PRIMARY_BORDER_COLOR: colors.ALTO,
