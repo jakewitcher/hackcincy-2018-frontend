@@ -5,7 +5,8 @@ import css from 'cssVariables';
 export const Wrapper = styled.li.attrs({ className: 'shelter-list__item' })`
   all: unset;
 
-  display: block;
+  display: flex;
+  align-items: center;
 
   margin: 2rem 0;
 

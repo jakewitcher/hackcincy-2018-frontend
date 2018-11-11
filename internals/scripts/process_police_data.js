@@ -17,8 +17,6 @@ fetch(CRIMES_URL)
 
     const POLICE_DATA = body;
 
-    console.log("Crimes count:", POLICE_DATA.data.length);
-
     let thefts = POLICE_DATA.data.filter((record) => { // Only get thefts
       return record[CRIME_TYPE_INDEX] == 'THEFT';
     }).filter((record) => { // Only thefts for current year
@@ -28,17 +26,15 @@ fetch(CRIMES_URL)
 
     });
 
-    console.log("Current thefts count:", thefts.length);
-
     let theft_cooordinates = thefts.map((record) => {
       return {lat: record[LATITUDE_INDEX], lng: record[LONGITUDE_INDEX]};
+    }).filter((coordinates) => {
+      return coordinates.lat != null && coordinates.lng != null;
     });
 
-    console.log("First theft location:", theft_cooordinates[0]);
 
     // Write to file because this is way too slow for client
     let writefile = __dirname+"/../../app/assets/fixtures/crime_coordinates.json";
-    console.log(writefile);
     require('fs').writeFileSync(writefile, JSON.stringify(theft_cooordinates, undefined, 2));
 
 });
