@@ -21,7 +21,7 @@ export class GroceryPage extends React.PureComponent {
 
         <Panel>
           <h1>Total:
-            <GroceryListItem total={parseFloat((el.quantity)) * parseFloat((el.price))} />
+            {/* <GroceryListItem total={parseFloat((el.quantity)) * parseFloat((el.price))} /> */}
           </h1>
         </Panel>
       </div>
