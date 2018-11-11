@@ -41,7 +41,7 @@ export class MapPage extends React.PureComponent {
   state = {
     panelActive: true,
     markers: [
-      { lat: 39.109852, lng: -84.515457, text: 'a', demand: 12 },
+      { lat: 39.109852, lng: -84.515457, text: 'a', demand: 20 },
       { lat: 39.29931, lng: -84.45231, text: 'b', demand: 8 },
       { lat: 39.20437, lng: -84.37799, text: 'c', demand: 4 },
     ],

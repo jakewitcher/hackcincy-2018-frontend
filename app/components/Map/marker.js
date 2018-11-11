@@ -1,10 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
+function scaleMarker(demand) {
+  if (demand >= 12) {
+    return 60;
+  }
+  return demand * 5;
+}
+
 export function Marker(props) {
   const Container = styled.button`
-    width: ${5 * props.demand}px;
-    height: ${5 * props.demand}px;
+    width: ${scaleMarker(props.demand)}px;
+    height: ${scaleMarker(props.demand)}px;
     border-radius: 50% 50% 50% 0;
     background: #ff8800;
     position: absolute;
@@ -12,15 +19,6 @@ export function Marker(props) {
     left: 50%;
     top: 50%;
     margin: -20px 0 0 -20px;
-    &:after {
-      content: '';
-      width: ${2 * props.demand}px;
-      height: ${2 * props.demand}px;
-      margin: 8px 0 0 8px;
-      background: #f4f1eb;
-      position: absolute;
-      border-radius: 50%;
-    }
   `;
   return <Container />;
 }
