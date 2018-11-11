@@ -12,6 +12,8 @@ const HeaderIcon = styled.div`
 
   text-transform: uppercase;
 
+  margin-left: 2rem;
+
   a {
     border: 2px solid ${css.CLR_PIZAZZ};
     padding: 1rem;

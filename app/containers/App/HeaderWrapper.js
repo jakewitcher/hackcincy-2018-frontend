@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import cssVariables from 'cssVariables';
 
 const HeaderWrapper = styled.aside`
   grid-area: header;
@@ -10,6 +11,9 @@ const HeaderWrapper = styled.aside`
 
   background-color: white;
   opacity: 0.8;
+  box-shadow: ${cssVariables.BOX_SHADOW_XS};
+  position: relative;
+  z-index: 3;
 `;
 
 export default HeaderWrapper;
