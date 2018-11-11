@@ -8,6 +8,12 @@ const makeSelectLocation = () =>
     routerState.get('location').toJS(),
   );
 
+const makeSelectCurrentPlace = () =>
+  createSelector(
+    selectApp,
+    appState => (appState ? appState.get('currentPlace') : false),
+  );
+
 const makeSelectPlaces = () =>
   createSelector(
     selectApp,
@@ -20,4 +26,9 @@ const makeSelectGroceries = () =>
     appState => (appState ? appState.get('groceries').toJS().grocery : false),
   );
 
-export { makeSelectLocation, makeSelectPlaces, makeSelectGroceries };
+export {
+  makeSelectLocation,
+  makeSelectPlaces,
+  makeSelectGroceries,
+  makeSelectCurrentPlace,
+};

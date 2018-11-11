@@ -1,8 +1,23 @@
 import {
+  SET_CURRENT_PLACE,
   GET_PLACES,
   GET_PLACES_SUCCESS,
   GET_PLACES_FAILURE,
 } from './constants';
+
+/**
+ * Grab all campaigns of current advertiser
+ *
+ * @param  {integer} advertiser_id id for the advertiser of which we want to grab all campaigns for
+ *
+ * @return {object}    An action object with a type of GET_ADVERTISER
+ */
+export function setCurrentPlace(placeObj) {
+  return {
+    type: SET_CURRENT_PLACE,
+    payload: placeObj,
+  };
+}
 
 /**
  * Grab all campaigns of current advertiser

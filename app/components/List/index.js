@@ -9,7 +9,7 @@ export class List extends React.PureComponent {
   }
 
   renderList = () => {
-    const { data, Component, focusMarker, resetMarker } = this.props;
+    const { data, Component, focusMarker, resetMarker, onClick } = this.props;
     if (!data) return '';
     return data.map(entry => (
       <Component
@@ -17,6 +17,7 @@ export class List extends React.PureComponent {
         focusMarker={focusMarker}
         resetMarker={resetMarker}
         key={entry.lat + entry.lng}
+        onClick={this.props.onClick}
       />
     ));
   };

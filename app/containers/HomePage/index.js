@@ -37,8 +37,6 @@ export default class HomePage extends React.PureComponent {
             <Divider />
             <LinkCTA to="/map">Find a shelter</LinkCTA>
             <SecondaryLink>I'm a shelter that needs help!</SecondaryLink>
-            {/* <Divider /> */}
-            {/* <LinkCTA /> */}
           </CTAButtonContainer>
         </CTAContainer>
       </PageWrapper>

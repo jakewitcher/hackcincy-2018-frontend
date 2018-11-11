@@ -11,7 +11,7 @@ export class ShelterListItem extends React.PureComponent {
   render() {
     // console.log("this.props.data: ", this.props.data); //  eslint-disable-line no-console
     return (
-      <StyledLink to="/grocery">
+      <StyledLink to="/grocery" onClick={() => this.props.onClick(this.props.data)}>
         <Wrapper
           key={this.props.data.lat + this.props.data.lng}
           onMouseEnter={() => this.props.focusMarker(this.props.data.lat)}

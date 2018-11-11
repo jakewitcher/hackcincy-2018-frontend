@@ -12,3 +12,4 @@
 export const GET_PLACES = 'bidder-ui/CampaignPage/GET_PLACES';
 export const GET_PLACES_SUCCESS = 'bidder-ui/CampaignPage/GET_PLACES_SUCCESS';
 export const GET_PLACES_FAILURE = 'bidder-ui/CampaignPage/GET_PLACES_FAILURE';
+export const SET_CURRENT_PLACE = 'bidder-ui/CampaignPage/SET_CURRENT_PLACE';

@@ -26,7 +26,7 @@ import {
   makeSelectPlaces,
   makeSelectGroceries,
 } from 'containers/App/selectors';
-import { getPlaces } from 'containers/App/actions';
+import { getPlaces, setCurrentPlace } from 'containers/App/actions';
 // import reducer from './reducer';
 // import saga from './saga';
 
@@ -124,6 +124,7 @@ export class MapPage extends React.PureComponent {
           <List
             data={this.state.markers}
             Component={ShelterListItem}
+            onClick={this.props.setCurrentPlace}
             focusMarker={this.focusMarker}
             resetMarker={this.resetMarker}
           />
@@ -136,8 +137,6 @@ export class MapPage extends React.PureComponent {
       </Wrapper>
     );
   }
-
-  renderPanel = () => { };
 }
 
 const mapStateToProps = createStructuredSelector({
@@ -149,6 +148,9 @@ function mapDispatchToProps(dispatch) {
   return {
     getPlaces: () => {
       dispatch(getPlaces());
+    },
+    setCurrentPlace: placeObj => {
+      dispatch(setCurrentPlace(placeObj));
     },
   };
 }

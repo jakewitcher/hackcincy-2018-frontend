@@ -8,6 +8,7 @@
  * Follow this format:
  * export const YOUR_ACTION_CONSTANT = 'yourproject/YourContainer/YOUR_ACTION_CONSTANT';
  */
+export const SET_CURRENT_PLACE = 'hack0cincy/App/SET_CURRENT_PLACE';
 export const GET_PLACES = 'hack0cincy/App/GET_PLACES';
 export const GET_PLACES_SUCCESS = 'hack0cincy/App/GET_PLACES_SUCCESS';
 export const GET_PLACES_FAILURE = 'hack0cincy/App/GET_PLACES_FAILURE';
