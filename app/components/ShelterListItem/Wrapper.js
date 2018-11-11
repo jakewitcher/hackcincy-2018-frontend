@@ -14,6 +14,8 @@ export const Wrapper = styled.li.attrs({ className: 'shelter-list__item' })`
 
   box-shadow: ${css.BOX_SHADOW_SM};
 
+  cursor: pointer;
+
   transition: box-shadow 600ms;
 
   &:hover {

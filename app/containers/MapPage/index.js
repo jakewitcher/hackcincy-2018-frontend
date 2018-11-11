@@ -32,7 +32,7 @@ import Toggle from './Toggle';
 import Wrapper from './Wrapper';
 
 //  side effects
-import { makeSelectPlaces } from './selectors';
+import { makeSelectPlaces, makeSelectGroceries } from './selectors';
 import { getPlaces } from './actions';
 import reducer from './reducer';
 import saga from './saga';
@@ -63,6 +63,7 @@ export class MapPage extends React.PureComponent {
 
   render() {
     console.log('this.props.places: ', this.props.places); //  eslint-disable-line no-console
+    console.log('this.props.groceries: ', this.props.groceries); //  eslint-disable-line no-console
     return (
       <Wrapper>
         {!this.state.panelActive && (
@@ -88,6 +89,7 @@ export class MapPage extends React.PureComponent {
 
 const mapStateToProps = createStructuredSelector({
   places: makeSelectPlaces(),
+  groceries: makeSelectGroceries(),
 });
 
 function mapDispatchToProps(dispatch) {
