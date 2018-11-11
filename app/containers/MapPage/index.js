@@ -16,10 +16,16 @@ import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 
 //  utils
-import injectReducer from 'utils/injectReducer';
-import injectSaga from 'utils/injectSaga';
+// import injectReducer from 'utils/injectReducer';
+// import injectSaga from 'utils/injectSaga';
 
 import shelterLocations from 'assets/fixtures/shelter-locations';
+
+//  side effects
+import { makeSelectPlaces, makeSelectGroceries } from 'containers/App/selectors';
+import { getPlaces } from 'containers/App/actions';
+// import reducer from './reducer';
+// import saga from './saga';
 
 import Header from 'components/Header';
 import List from 'components/List';
@@ -31,15 +37,10 @@ import Panel from './Panel';
 import Toggle from './Toggle';
 import Wrapper from './Wrapper';
 
-//  side effects
-import { makeSelectPlaces, makeSelectGroceries } from './selectors';
-import { getPlaces } from './actions';
-import reducer from './reducer';
-import saga from './saga';
-
 export class MapPage extends React.PureComponent {
   state = {
     panelActive: true,
+    // currentPanel: 'places',
     markers: [
       { lat: 39.109852, lng: -84.515457, text: 'a', demand: 12 },
       { lat: 39.29931, lng: -84.45231, text: 'b', demand: 8 },
@@ -85,6 +86,10 @@ export class MapPage extends React.PureComponent {
       </Wrapper>
     );
   }
+
+  renderPanel = () => {
+
+  }
 }
 
 const mapStateToProps = createStructuredSelector({
@@ -105,13 +110,13 @@ const withConnect = connect(
   mapDispatchToProps,
 );
 
-const withReducer = injectReducer({ key: 'mapPage', reducer });
-const withSaga = injectSaga({ key: 'mapPage', saga });
+// const withReducer = injectReducer({ key: 'mapPage', reducer });
+// const withSaga = injectSaga({ key: 'mapPage', saga });
 
 MapPage.propTypes = {};
 
 export default compose(
-  withReducer,
-  withSaga,
+  // withReducer,
+  // withSaga,
   withConnect,
 )(MapPage);

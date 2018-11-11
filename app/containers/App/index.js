@@ -9,6 +9,14 @@
 
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { createStructuredSelector } from 'reselect';
+
+//  utils
+import injectReducer from 'utils/injectReducer';
+import injectSaga from 'utils/injectSaga';
+
 
 import HomePage from 'containers/HomePage/Loadable';
 import MapPage from 'containers/MapPage/Loadable';
@@ -16,14 +24,19 @@ import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 import MenuLink from 'components/MenuLink';
 
+import { makeSelectPlaces, makeSelectGroceries, makeSelectLocation } from './selectors';
+
 import Content from './Content';
 import HeaderIcon from './HeaderIcon';
 import HeaderMenu from './HeaderMenu';
 import HeaderWrapper from './HeaderWrapper';
 
+import reducer from './reducer';
+import saga from './saga';
+
 import GlobalStyle from '../../global-styles';
 
-export default function App() {
+export function App() {
   return (
     <div>
       <HeaderWrapper>
@@ -46,3 +59,33 @@ export default function App() {
     </div>
   );
 }
+
+const mapStateToProps = createStructuredSelector({
+  location: makeSelectLocation(),
+  // places: makeSelectPlaces(),
+  // groceries: makeSelectGroceries(),
+});
+
+function mapDispatchToProps(dispatch) {
+  return {
+    // getPlaces: () => {
+    //   dispatch(getPlaces());
+    // },
+  };
+}
+
+const withConnect = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+);
+
+const withReducer = injectReducer({ key: 'app', reducer });
+const withSaga = injectSaga({ key: 'app', saga });
+
+App.propTypes = {};
+
+export default compose(
+  withReducer,
+  withSaga,
+  withConnect,
+)(App);
