@@ -10,10 +10,16 @@ export class ShelterListItem extends React.PureComponent {
   render() {
     // console.log("this.props.data: ", this.props.data); //  eslint-disable-line no-console
     return (
-      <Wrapper key={this.props.lat + this.props.lng}>
+      <Wrapper
+        key={this.props.data.lat + this.props.data.lng}
+        onMouseEnter={() => this.props.focusMarker(this.props.data.lat)}
+        onMouseLeave={() => this.props.resetMarker(this.props.data.lat)}
+      >
         <ListItemInfo>
           <ListItemHeader>{this.props.data.name}</ListItemHeader>
-          <ListItemHeaderSub>{this.props.data.formatted_address}</ListItemHeaderSub>
+          <ListItemHeaderSub>
+            {this.props.data.formatted_address}
+          </ListItemHeaderSub>
         </ListItemInfo>
         <ListItemMetric>
           {this.props.data.distance ? this.props.data.distance : 0.3}

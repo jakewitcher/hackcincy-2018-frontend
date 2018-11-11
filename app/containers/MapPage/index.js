@@ -40,17 +40,19 @@ import Wrapper from './Wrapper';
 export class MapPage extends React.PureComponent {
   state = {
     panelActive: true,
-    // currentPanel: 'places',
-    markers: [
-      { lat: 39.109852, lng: -84.515457, text: 'a', demand: 12 },
-      { lat: 39.29931, lng: -84.45231, text: 'b', demand: 8 },
-      { lat: 39.20437, lng: -84.37799, text: 'c', demand: 4 },
-    ],
+    markers: [],
   };
+
+  addFocus(places) {
+    return places.map(place => {
+      place.focus = false;
+      return place;
+    });
+  }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.places) {
-      this.setState({ markers: nextProps.places });
+      this.setState({ markers: this.addFocus(nextProps.places) });
     }
   }
 
@@ -60,6 +62,30 @@ export class MapPage extends React.PureComponent {
 
   togglePanel = () => {
     this.setState({ panelActive: !this.state.panelActive });
+  };
+
+  focusMarker = place => {
+    this.setState({
+      markers: this.state.markers.map(p => {
+        if (p.lat === place) {
+          p.focus = true;
+          return p;
+        }
+        return p;
+      }),
+    });
+  };
+
+  resetMarker = place => {
+    this.setState({
+      markers: this.state.markers.map(p => {
+        if (p.lat === place) {
+          p.focus = false;
+          return p;
+        }
+        return p;
+      }),
+    });
   };
 
   render() {
@@ -80,7 +106,12 @@ export class MapPage extends React.PureComponent {
             </Toggle>
           </Control>
 
-          <List data={this.props.places} Component={ShelterListItem} />
+          <List
+            data={this.state.markers}
+            Component={ShelterListItem}
+            focusMarker={this.focusMarker}
+            resetMarker={this.resetMarker}
+          />
         </Panel>
         <Maps markers={this.state.markers} />
       </Wrapper>

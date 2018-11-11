@@ -7,8 +7,8 @@ import API_KEY from '../../../config_keys';
 export default class Maps extends React.PureComponent {
   static defaultProps = {
     center: {
-      lat: 39.103119,
-      lng: -84.512016,
+      lat: 39.11442,
+      lng: -84.52778,
     },
     zoom: 14,
   };
@@ -25,9 +25,12 @@ export default class Maps extends React.PureComponent {
             <Marker
               lat={location.lat}
               lng={location.lng}
-              text={location.text}
+              text={location.formatted_address}
               key={location.lat + location.lng}
-              demand={location.demand}
+              demand={20}
+              focus={location.focus}
+              focusMarker={this.props.focusMarker}
+              resetMarker={this.props.resetMarker}
             />
           ))}
         </GoogleMapReact>
