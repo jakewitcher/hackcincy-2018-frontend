@@ -20,6 +20,7 @@ import injectSaga from 'utils/injectSaga';
 import ConfirmationPage from 'containers/ConfirmationPage/Loadable';
 import HomePage from 'containers/HomePage/Loadable';
 import MapPage from 'containers/MapPage/Loadable';
+import GroceryPage from 'containers/GroceryPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 import MenuLink from 'components/MenuLink';
@@ -59,6 +60,7 @@ export function App() {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/map" component={MapPage} />
           <Route exact path="/confirmation" component={ConfirmationPage} />
+          <Route exact path="/grocery" component={GroceryPage} />
           <Route component={NotFoundPage} />
         </Switch>
       </Content>
