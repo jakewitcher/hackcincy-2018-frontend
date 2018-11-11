@@ -10,8 +10,8 @@ function scaleMarker(demand) {
 
 export function Marker(props) {
   const Container = styled.button`
-    width: ${scaleMarker(props.demand)}px;
-    height: ${scaleMarker(props.demand)}px;
+    width: 30px;
+    height: 30px;
     border-radius: 50% 50% 50% 0;
     background: #ff8800;
     position: absolute;
