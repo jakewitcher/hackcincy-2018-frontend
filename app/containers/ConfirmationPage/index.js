@@ -16,6 +16,8 @@ import React from 'react';
 
 import Header from './Header';
 import HeaderSub from './HeaderSub';
+import Button from '../../components/LinkCTA/index';
+import ButtonWrapper from './ButtonWrapper';
 
 import IconWrapper from './IconWrapper';
 import Wrapper from './Wrapper';
@@ -31,6 +33,9 @@ export default class ConfirmationPage extends React.PureComponent {
         </IconWrapper>
         <Header>Thank you for donating!</Header>
         <HeaderSub>Your confirmation number is #151287662</HeaderSub>
+        <ButtonWrapper>
+          <Button to="/map">Find another pantry</Button>
+        </ButtonWrapper>
       </Wrapper>
     );
   }
