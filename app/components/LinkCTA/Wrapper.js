@@ -8,10 +8,6 @@ export const Wrapper = styled(Link)`
   font-family: 'Raleway', sans-serif;
   font-size: 2.4rem;
   text-align: center;
-  ${'' /* text-transform: uppercase; */}
-
-  ${'' /* color: ${css.CLR_PIZAZZ};
-  border: 2px solid ${css.CLR_PIZAZZ}; */}
 
   padding: 1.6rem 4rem;
   border-radius: 5rem;
