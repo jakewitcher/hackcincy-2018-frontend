@@ -6,7 +6,8 @@ export const Layout = styled.div`
   align-items: flex-start;
   justify-content: space-evenly;
   max-width: 100vw;
-  margin-bottom: 110px;
+  height: 100%;
+  margin-bottom: 500px;
 `;
 
 export default Layout;
