@@ -17,7 +17,10 @@ import { createStructuredSelector } from 'reselect';
 import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
 
+<<<<<<< HEAD
 import ConfirmationPage from 'containers/ConfirmationPage/Loadable';
+=======
+>>>>>>> grocery listing styles
 import HomePage from 'containers/HomePage/Loadable';
 import MapPage from 'containers/MapPage/Loadable';
 import GroceryPage from 'containers/GroceryPage/Loadable';
