@@ -16,6 +16,7 @@ import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 import MenuLink from 'components/MenuLink';
 
+import Content from './Content';
 import HeaderIcon from './HeaderIcon';
 import HeaderMenu from './HeaderMenu';
 import HeaderWrapper from './HeaderWrapper';
@@ -34,11 +35,13 @@ export default function App() {
           <MenuLink to="/map">Map</MenuLink>
         </HeaderMenu>
       </HeaderWrapper>
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route exact path="/map" component={MapPage} />
-        <Route component={NotFoundPage} />
-      </Switch>
+      <Content>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/map" component={MapPage} />
+          <Route component={NotFoundPage} />
+        </Switch>
+      </Content>
       <GlobalStyle />
     </div>
   );

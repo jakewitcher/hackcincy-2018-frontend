@@ -10,6 +10,7 @@ export class List extends React.PureComponent {
 
   renderList = () => {
     const { data, Component } = this.props;
+    if (!data) return '';
     return data.map(entry => <Component data={entry} />);
   };
 }

@@ -47,12 +47,18 @@ export class MapPage extends React.PureComponent {
     ],
   };
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.places) {
+      this.setState({ markers: nextProps.places });
+    }
+  }
+
   componentDidMount() {
     this.props.getPlaces();
   }
 
   togglePanel = () => {
-    this.setState8({ panelActive: !this.state.panelActive });
+    this.setState({ panelActive: !this.state.panelActive });
   };
 
   render() {
@@ -72,7 +78,7 @@ export class MapPage extends React.PureComponent {
             </Toggle>
           </Control>
 
-          <List data={shelterLocations} Component={ShelterListItem} />
+          <List data={this.props.places} Component={ShelterListItem} />
         </Panel>
         <Maps markers={this.state.markers} />
       </Wrapper>

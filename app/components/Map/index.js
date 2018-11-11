@@ -10,7 +10,7 @@ export default class Maps extends React.PureComponent {
       lat: 39.103119,
       lng: -84.512016,
     },
-    zoom: 10,
+    zoom: 14,
   };
 
   render() {

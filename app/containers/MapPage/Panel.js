@@ -6,11 +6,15 @@ const Panel = styled.aside.attrs({ className: 'map-page__panel' })`
   top: 0;
   left: 0;
 
+  height: 100%;
+  ${'' /* min-width: 25%; */}
+  width: 30%;
+  padding: 1.6rem 2.4rem;
+  ${'' /* padding: 1.6rem 0; */}
+
   background-color: #fff;
 
-  height: 100%;
-  min-width: 25%;
-  padding: 1.6rem 2.4rem;
+  overflow: auto;
 
   transform: translateX(-100%);
 
