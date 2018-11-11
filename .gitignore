@@ -8,3 +8,7 @@ stats.json
 .DS_Store
 npm-debug.log
 .idea
+
+# api keys
+.env
+config_keys.js
