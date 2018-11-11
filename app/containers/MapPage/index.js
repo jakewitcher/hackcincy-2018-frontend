@@ -14,6 +14,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
+import geolib from 'geolib';
 
 //  utils
 // import injectReducer from 'utils/injectReducer';
@@ -50,6 +51,10 @@ export class MapPage extends React.PureComponent {
     return places.map(place => {
       const listSize = Math.floor(Math.random() * 7 + 3);
       const newList = groceries.slice(0, listSize);
+      const distance = geolib.getDistance(
+        { latitude: 39.11442, longitude: -84.52778 },
+        { latitude: place.lat, longitude: place.lng },
+      );
       place.focus = false;
       place.groceries = newList.map(item => {
         item.quantity = Math.floor(Math.random() * 18 + 2);
@@ -59,6 +64,7 @@ export class MapPage extends React.PureComponent {
         (sum, item) => sum + item.quantity,
         0,
       );
+      place.distance = geolib.convertUnit('mi', distance, 2);
       return place;
     });
   }

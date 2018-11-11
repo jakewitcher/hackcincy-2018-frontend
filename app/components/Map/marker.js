@@ -5,8 +5,11 @@ import css from 'cssVariables';
 const baseColor = '#ff8800;';
 
 function scaleMarker(demand) {
-  if (demand >= 15) {
-    return 30;
+  if (demand <= 30) {
+    return 15;
+  }
+  if (demand >= 80) {
+    return 40;
   }
   return demand * 0.5;
 }
@@ -51,7 +54,7 @@ export function Marker(props) {
     font-weight: bold;
     background: white;
     padding: 10px;
-    `;
+  `;
 
   return (
     <div>

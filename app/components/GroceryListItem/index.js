@@ -2,9 +2,10 @@ import React from 'react';
 
 import { ImageContainer } from './GroceryListImage';
 import { ImageStyles } from './GroceryListImage';
-import GroceryListInfo from './GroceryListInfo';
-import GroceryListInput from './GroceryListInput'
-import NumericInput from 'react-numeric-input';
+import { GroceryListName } from './GroceryListInfo';
+import { GroceryListPrice } from './GroceryListInfo';
+import { GroceryListQty } from './GroceryListInfo';
+import GroceryListInput from './GroceryListInput';
 import Flexbox from './Flexbox';
 
 export class GroceryItem extends React.PureComponent {
@@ -27,9 +28,9 @@ export class GroceryItem extends React.PureComponent {
           <ImageStyles src={this.props.img}></ImageStyles>
         </ImageContainer>
         <div>
-          <GroceryListInfo>{this.props.name}</GroceryListInfo>
-          <GroceryListInfo>{new Intl.NumberFormat('en', { style: 'currency', currency: 'USD' }).format(this.props.price)}</GroceryListInfo>
-          <GroceryListInfo>Quantity Needed: {this.props.qty}</GroceryListInfo>
+          <GroceryListName>{this.props.name}</GroceryListName>
+          <GroceryListPrice>{new Intl.NumberFormat('en', { style: 'currency', currency: 'USD' }).format(this.props.price)}</GroceryListPrice>
+          <GroceryListQty>Quantity Needed: {this.props.qty}</GroceryListQty>
           <GroceryListInput type="number" placeholder="0" min="0" max="50" onChange={(event) => this.changeTotal(event, this.props.price)}></GroceryListInput>
         </div>
       </Flexbox>
