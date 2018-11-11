@@ -55,7 +55,7 @@ export function Marker(props) {
 
   return (
     <div>
-      <Link to="/grocery">
+      <Link to="/grocery" onClick={() => props.onClick(props.locationData)}>
         <Container
           onMouseEnter={() => props.focusMarker(props.lat)}
           onMouseLeave={() => props.resetMarker(props.lat)}

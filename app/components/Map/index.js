@@ -31,6 +31,8 @@ export default class Maps extends React.PureComponent {
               key={location.lat + location.lng}
               demand={location.demand}
               focus={location.focus}
+              locationData={location}
+              onClick={this.props.onClick}
               focusMarker={this.props.focusMarker}
               resetMarker={this.props.resetMarker}
             />

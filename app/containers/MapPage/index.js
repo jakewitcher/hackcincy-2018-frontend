@@ -131,6 +131,7 @@ export class MapPage extends React.PureComponent {
         </Panel>
         <Maps
           markers={this.state.markers}
+          onClick={this.props.setCurrentPlace}
           focusMarker={this.focusMarker}
           resetMarker={this.resetMarker}
         />
