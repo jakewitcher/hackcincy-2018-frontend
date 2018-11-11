@@ -43,9 +43,16 @@ export class MapPage extends React.PureComponent {
     markers: [],
   };
 
+  addFocus(places) {
+    return places.map(place => {
+      place.focus = false;
+      return place;
+    });
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.places) {
-      this.setState({ markers: nextProps.places });
+      this.setState({ markers: this.addFocus(nextProps.places) });
     }
   }
 
@@ -53,12 +60,32 @@ export class MapPage extends React.PureComponent {
     this.props.getPlaces();
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({ markers: nextProps.places })
-  }
-
   togglePanel = () => {
     this.setState({ panelActive: !this.state.panelActive });
+  };
+
+  focusMarker = place => {
+    this.setState({
+      markers: this.state.markers.map(p => {
+        if (p.lat === place) {
+          p.focus = true;
+          return p;
+        }
+        return p;
+      }),
+    });
+  };
+
+  resetMarker = place => {
+    this.setState({
+      markers: this.state.markers.map(p => {
+        if (p.lat === place) {
+          p.focus = false;
+          return p;
+        }
+        return p;
+      }),
+    });
   };
 
   render() {
@@ -79,7 +106,12 @@ export class MapPage extends React.PureComponent {
             </Toggle>
           </Control>
 
-          <List data={this.props.places} Component={ShelterListItem} />
+          <List
+            data={this.state.markers}
+            Component={ShelterListItem}
+            focusMarker={this.focusMarker}
+            resetMarker={this.resetMarker}
+          />
         </Panel>
         <Maps markers={this.state.markers} />
       </Wrapper>
