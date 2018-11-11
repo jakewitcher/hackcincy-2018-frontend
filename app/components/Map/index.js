@@ -25,7 +25,7 @@ export default class Maps extends React.PureComponent {
             <Marker
               lat={location.lat}
               lng={location.lng}
-              text={location.formatted_address}
+              text={location.name}
               key={location.lat + location.lng}
               demand={20}
               focus={location.focus}

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import css from 'cssVariables';
 const baseColor = '#ff8800;';
 
 function scaleMarker(demand) {
@@ -14,6 +15,13 @@ function colorChange(focus) {
     return 'red';
   }
   return false;
+}
+
+function displayName(focus) {
+  if (focus) {
+    return 'block';
+  }
+  return 'none';
 }
 
 export function Marker(props) {
@@ -31,11 +39,29 @@ export function Marker(props) {
     margin: -20px 0 0 -20px;
     opacity: 0.7;
   `;
+
+  const ShelterName = styled.div`
+    display: ${displayName(props.focus)};
+    box-shadow: ${css.BOX_SHADOW_SM};
+    align-items: center;
+    width: 100px;
+    position: relative;
+    z-index: 2;
+    font-weight: bold;
+    background: white;
+    padding: 10px;
+    `;
+
   return (
-    <Container
-      onMouseEnter={() => props.focusMarker(props.lat)}
-      onMouseLeave={() => props.resetMarker(props.lat)}
-    />
+    <div>
+      <Container
+        onMouseEnter={() => props.focusMarker(props.lat)}
+        onMouseLeave={() => props.resetMarker(props.lat)}
+      />
+      <ShelterName>
+        <p>{props.text}</p>
+      </ShelterName>
+    </div>
   );
 }
 
