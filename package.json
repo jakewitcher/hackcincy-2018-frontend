@@ -13,6 +13,7 @@
   "author": "Max Stoiber",
   "license": "MIT",
   "scripts": {
+    "process_data": "node ./internals/scripts/process_police_data.js",
     "analyze:clean": "rimraf stats.json",
     "preanalyze": "npm run analyze:clean",
     "analyze": "node ./internals/scripts/analyze.js",
@@ -76,6 +77,7 @@
     "loadable-components": "2.2.3",
     "lodash": "4.17.11",
     "minimist": "1.2.0",
+    "node-fetch": "^2.2.1",
     "prop-types": "15.6.2",
     "react": "16.6.0",
     "react-dom": "16.6.0",
