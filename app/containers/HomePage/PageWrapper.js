@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 
-export const Layout = styled.div`
+export const PageWrapper = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   margin: 0 auto;
 
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
 
-export default Layout;
+export default PageWrapper;

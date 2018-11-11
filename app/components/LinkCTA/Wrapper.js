@@ -1,9 +1,13 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import css from 'cssVariables';
 
-export const Wrapper = styled.button`
+export const Wrapper = styled(Link)`
+  all: unset;
+  font-family: 'Raleway', sans-serif;
   font-size: 2.4rem;
+  text-align: center;
   ${'' /* text-transform: uppercase; */}
 
   ${'' /* color: ${css.CLR_PIZAZZ};
@@ -13,7 +17,9 @@ export const Wrapper = styled.button`
   border-radius: 5rem;
 
   color: #fff;
-  background-color: ${css.CLR_PIZAZZ};
+  background-image: linear-gradient(to right, #ff8800, #ff9900, #ffab00, #ffbb00, #ffcc00);
+
+  cursor: pointer;
 
   box-shadow: ${css.BOX_SHADOW_SM};
 

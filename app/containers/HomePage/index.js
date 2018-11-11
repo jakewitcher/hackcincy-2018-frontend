@@ -10,17 +10,38 @@
  */
 
 import React from 'react';
-import Button from 'components/Button';
-import Layout from './Layout';
+import LinkCTA from 'components/LinkCTA';
+
+import HeroImageSrc from 'assets/images/autumn-hero.jpg';
+
+import CTAButtonContainer from './CTAButtonContainer';
+import CTAContainer from './CTAContainer';
+import Divider from './Divider';
+import HeroImage from './HeroImage';
+import HeroImageContainer from './HeroImageContainer';
+import HeroHeader from './HeroHeader';
+import PageWrapper from './PageWrapper';
+import SecondaryLink from './SecondaryLink';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class HomePage extends React.PureComponent {
   render() {
     return (
-      <Layout>
-        <Button />
-        <Button />
-      </Layout>
+      <PageWrapper>
+        <HeroImageContainer src={HeroImage}>
+          <HeroImage src={HeroImageSrc} alt="hero autumn" />
+        </HeroImageContainer>
+        <CTAContainer>
+          <HeroHeader>Feed your community.</HeroHeader>
+          <CTAButtonContainer>
+            <Divider />
+            <LinkCTA to="/map">Find a shelter</LinkCTA>
+            <SecondaryLink>I'm a shelter that needs help!</SecondaryLink>
+            {/* <Divider /> */}
+            {/* <LinkCTA /> */}
+          </CTAButtonContainer>
+        </CTAContainer>
+      </PageWrapper>
     );
   }
 }

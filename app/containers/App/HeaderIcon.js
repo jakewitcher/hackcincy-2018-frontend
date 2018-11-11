@@ -17,13 +17,21 @@ const HeaderIcon = styled.div`
     padding: 1rem;
     padding-left: 2.4rem;
 
+    font-family: 'PT Sans Caption', sans-serif;
     letter-spacing: 1rem;
-    ${'' /* margin: 2rem 4rem; */}
-
     font-weight: 600;
+
+    cursor: pointer;
 
     &::first-line {
       font-weight: 100;
+    }
+
+    transition: all 400ms;
+    &:hover {
+      background-color: ${css.CLR_PIZAZZ};
+      color: #fff;
+      border-width: 0px;
     }
   }
 `;
