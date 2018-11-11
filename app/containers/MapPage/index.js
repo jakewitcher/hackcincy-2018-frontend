@@ -113,7 +113,11 @@ export class MapPage extends React.PureComponent {
             resetMarker={this.resetMarker}
           />
         </Panel>
-        <Maps markers={this.state.markers} />
+        <Maps
+          markers={this.state.markers}
+          focusMarker={this.focusMarker}
+          resetMarker={this.resetMarker}
+        />
       </Wrapper>
     );
   }
