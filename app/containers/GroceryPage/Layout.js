@@ -7,7 +7,7 @@ export const Layout = styled.div`
   justify-content: space-evenly;
   max-width: 100vw;
   height: 100%;
-  margin-bottom: 72rem;
+  margin-bottom: 85rem;
   padding: 0 2rem;
 `;
 
