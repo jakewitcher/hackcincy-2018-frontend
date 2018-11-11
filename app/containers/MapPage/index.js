@@ -50,6 +50,7 @@ export class MapPage extends React.PureComponent {
   };
 
   render() {
+    console.log("this.props.places: ", this.props.places); //  eslint-disable-line no-console
     return (
       <Wrapper>
         {!this.state.panelActive && (
@@ -90,8 +91,8 @@ const withConnect = connect(
   mapDispatchToProps,
 );
 
-const withReducer = injectReducer({ key: 'map', reducer });
-const withSaga = injectSaga({ key: 'map', saga });
+const withReducer = injectReducer({ key: 'mapPage', reducer });
+const withSaga = injectSaga({ key: 'mapPage', saga });
 
 MapPage.propTypes = {
 };
