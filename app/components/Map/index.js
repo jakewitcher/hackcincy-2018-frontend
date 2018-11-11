@@ -21,15 +21,15 @@ export default class Maps extends React.PureComponent {
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
-          {
-            this.props.markers.map((location) => (
-              <Marker
-                lat={location.lat}
-                lng={location.lng}
-                text={location.text}
-              />
-            ))
-          }
+          {this.props.markers.map(location => (
+            <Marker
+              lat={location.lat}
+              lng={location.lng}
+              text={location.text}
+              key={location.lat + location.lng}
+              demand={location.demand}
+            />
+          ))}
         </GoogleMapReact>
       </div>
     );
