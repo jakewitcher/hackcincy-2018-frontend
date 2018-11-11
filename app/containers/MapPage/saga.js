@@ -14,9 +14,9 @@ import {
 } from 'redux-saga/effects'; // eslint-disable-line no-unused-vars
 import request from 'utils/request';
 
-// import { GET_CAMPAIGNS } from './constants';
+import { GET_PLACES } from './constants';
 
-import { getCampaignsSuccess, getCampaignsFailure } from './actions';
+import { getPlacesSuccess, getPlacesFailure } from './actions';
 
 /**
  * A GET api call
@@ -27,19 +27,18 @@ import { getCampaignsSuccess, getCampaignsFailure } from './actions';
  */
 
 export function* fetchPlaces(action) {
-  // const security_key = action.security_key;
-  const advertiser_id = action.payload;
   const requestURL = '/places';
-  // const requestBody = action.payload;
+  // console.log(requestURL, "action: ", action); //  eslint-disable-line no-console
   // console.log('container/campaignPage/saga.js     login:requestBody ', requestBody); //  eslint-disable-line no-console
 
   try {
     const response = yield call(request, requestURL, {
-      method: 'GET'
+      method: 'GET',
     });
     console.log('fetchCampaigns:response ', response); //  eslint-disable-line no-console
 
     if (response.success) {
+      console.log("response.payload: ", response.payload); //  eslint-disable-line no-console
       yield put(getPlacesSuccess(response.payload));
     } else {
       yield put(
