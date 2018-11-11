@@ -6,7 +6,8 @@ const Control = styled.div.attrs({ className: 'panel__control' })`
   display: flex;
   justify-content: end;
 
-  margin-bottom: 8rem;
+  margin-top: 1.4rem;
+  margin-bottom: 6rem;
 `;
 
 export default Control;
