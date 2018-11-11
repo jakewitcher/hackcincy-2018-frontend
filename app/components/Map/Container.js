@@ -10,6 +10,15 @@ export const Container = styled.button`
   left: 50%;
   top: 50%;
   margin: -20px 0 0 -20px;
+  &:after {
+    content: '';
+    width: 14px;
+    height: 14px;
+    margin: 8px 0 0 8px;
+    background: #f4f1eb;
+    position: absolute;
+    border-radius: 50%;
+  }
 `;
 
 export default Container;
